@@ -141,7 +141,7 @@ $(document).ready(function () {
         // Exportar archivos
         IndexUtils.exportarCodigos('codigos_validos', Array.from(codigosUnicos));
         if (codigosDuplicados.length > 0) {
-            exportarCodigos('codigos_duplicados', codigosDuplicados);
+            IndexUtils.exportarCodigos('codigos_duplicados', codigosDuplicados);
         }
     });
 });
