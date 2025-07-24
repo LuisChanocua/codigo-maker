@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO General -->
+    <meta name="title" content="Generador de Códigos Únicos Personalizados | Código Maker">
+    <meta name="description"
+        content="Crea códigos únicos al instante con tus propias reglas: letras, números, caracteres especiales, longitud, y más. Exporta resultados en TXT y evita duplicados.">
+    <meta name="author" content="Luis Esteban">
+    <meta name="keywords"
+        content="generador de códigos, códigos únicos, exportar códigos, combinaciones posibles, códigos aleatorios, código maker, caracteres personalizados, txt, sin duplicados">
+
+    <!-- URL base y favicon -->
+    <base href="codigo-maker/">
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <!-- Open Graph (para compartir en redes sociales) -->
+    <meta property="og:title" content="Generador de Códigos Únicos Personalizados" />
+    <meta property="og:description"
+        content="Configura letras, números y símbolos para generar códigos únicos, sin repeticiones. Ideal para sorteos, promociones o validaciones." />
+    <meta property="og:image" content="share.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://codigo-maker.netlify.app/" />
+
+    <!-- Título del navegador -->
+    <title>Generador de Códigos Únicos | Código Maker</title>
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔐 Generador de Códigos Únicos</h1>
+
+        <form id="configForm">
+            <div class="form-group">
+                <label>
+                    Longitud total del código:
+                </label>
+                <input type="number" id="longitud" min="1" value="8" required />
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Letras permitidas:
+                </label>
+                <input type="text" id="letras" placeholder="Ej: ABCXYZ" />
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Cantidad:
+                </label>
+                <input type="number" id="cantidadLetras" min="0" value="4" />
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Números permitidos:
+                </label>
+                <input type="text" id="numeros" placeholder="Ej: 0123456789" />
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Cantidad:
+                </label>
+                <input type="number" id="cantidadNumeros" min="0" value="2" />
+            </div>
+            <div class="form-group">
+                <label for="especiales">Caracteres especiales (opcional):</label>
+                <input type="text" id="especiales" placeholder="Ej: #$%&">
+            </div>
+
+            <div class="form-group">
+                <label>Cantidad de caracteres especiales:</label>
+                <input type="number" id="cantidadEspeciales" value="0" min="0">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Usar mayúsculas y minúsculas combinadas
+                </label>
+                <input type="checkbox" id="usarMayusculas" checked />
+            </div>
+
+            <button type="submit">🛠️ Generar Códigos</button>
+        </form>
+
+        <div id="preview">
+            <h3>📋 Vista previa</h3>
+            <p><strong>Total de combinaciones posibles:</strong> <span id="combinaciones">0</span></p>
+            <p><strong>Ejemplo de código:</strong> <code id="codigoEjemplo">---</code></p>
+            <button id="exportarBtn" disabled>📄 Exportar a TXT</button>
+
+            <div id="duplicadosContainer" style="margin-top:1rem;"></div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        Hecho por Luis Chanocua •
+        <a href="https://www.linkedin.com/in/luis-chanocua" target="_blank">LinkedIn</a>
+    </footer>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
